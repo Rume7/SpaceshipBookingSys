@@ -4,6 +4,7 @@ import io.turntabl.exception.OutOfCapacityException;
 import io.turntabl.seat.HumanSeat;
 import io.turntabl.seat.MartianSeat;
 import io.turntabl.seat.Seat;
+import io.turntabl.ship.Spaceship;
 
 public class MainApplication {
 

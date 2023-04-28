@@ -1,4 +1,4 @@
-package io.turntabl;
+package io.turntabl.ship;
 
 import io.turntabl.exception.OutOfCapacityException;
 import io.turntabl.meal.Meal;
