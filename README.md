@@ -1,8 +1,9 @@
 # SpaceshipBookingSys
 
-Exercise 01 - Group Work
+
 A fleet of spaceships require a seat booking system for a passenger to book a seat on a flight. We
 need to provide them with the ability to book!
+
 Humans can book ‘human’ seats and martians can book ‘martian’ seats.
 1. There should be one seat booking system, which all spaceships can use.
 2. Implement classes for both these seat types. Both of these classes should inherit from a
