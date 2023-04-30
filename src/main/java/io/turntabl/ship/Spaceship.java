@@ -2,6 +2,9 @@ package io.turntabl.ship;
 
 import io.turntabl.exception.OutOfCapacityException;
 import io.turntabl.meal.Meal;
+import io.turntabl.passenger.Human;
+import io.turntabl.passenger.Martian;
+import io.turntabl.passenger.Passenger;
 import io.turntabl.seat.HumanSeat;
 import io.turntabl.seat.MartianSeat;
 import io.turntabl.seat.Seat;
@@ -12,8 +15,8 @@ import java.util.List;
 
 public class Spaceship {
 
-    private List<Seat> listOfHumanSeats;
-    private List<Seat> listOfMartianSeats;
+    private final List<Seat> listOfHumanSeats;
+    private final List<Seat> listOfMartianSeats;
     private static int availableHumanSeats;
     private static int availableMartainSeats;
     private static final int SEAT_CAPACITY = 10;
@@ -29,33 +32,41 @@ public class Spaceship {
     }
 
     private void showSeatsAvailable() {
-        System.out.println("There are " + availableHumanSeats + " human seats available");
-        System.out.println("There are " + availableMartainSeats + " martian seats available");
+        System.out.println("There are " + availableHumanSeats + " human seats and " +
+                availableMartainSeats + " martian seats available");
     }
 
-    public String bookSeat(Seat seat) throws OutOfCapacityException {
+    public Seat bookSeat(Passenger passenger) throws OutOfCapacityException {
         Seat bookedSeat = null;
 
-        if (seat.getSeatType() == SeatType.HUMAN) {
+        if (passenger instanceof Human) {
             if (availableHumanSeats <= SEAT_CAPACITY/2 && availableHumanSeats > 0) {
-                bookedSeat = new HumanSeat(seat.getID(), seat.getName());
+                bookedSeat = new HumanSeat(passenger.getID(), passenger.getName());
                 availableHumanSeats--;
-            } else {
+            }  else {
                 throw new OutOfCapacityException("The spaceship is full.");
             }
-        } else {
+        } else if (passenger instanceof Martian) {
             if (availableMartainSeats <= SEAT_CAPACITY/2 && availableMartainSeats > 0) {
-                bookedSeat = new MartianSeat(seat.getID(), seat.getName());
+                bookedSeat = new MartianSeat(passenger.getID(), passenger.getName());
                 availableMartainSeats--;
             } else {
                 throw new OutOfCapacityException("The spaceship is full.");
             }
         }
-        return bookedSeat.toString() + " successfully created";
+        return bookedSeat;
     }
 
     public String servePassengerMeal(Seat type) {
         return type.getMeal().toString();
+    }
+
+    public List<Seat> getListOfHumanSeats() {
+        return listOfHumanSeats;
+    }
+
+    public List<Seat> getListOfMartianSeats() {
+        return listOfMartianSeats;
     }
 
     public void getNumberOfSeatsAvailable() {
