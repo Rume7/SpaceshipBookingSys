@@ -19,7 +19,7 @@ public class Martian extends Passenger {
 
     @Override
     public String serveMeal() {
-        return "Human meal served.";
+        return "Martian meal served.";
     }
 
     @Override
