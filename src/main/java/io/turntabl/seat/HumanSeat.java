@@ -12,6 +12,6 @@ public class HumanSeat extends Seat {
 
     @Override
     public String toString() {
-        return "Human " + getName() + " Seat";
+        return "Human, " + getName() + " Seat";
     }
 }

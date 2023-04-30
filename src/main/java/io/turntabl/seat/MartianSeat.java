@@ -13,6 +13,6 @@ public class MartianSeat extends Seat {
 
     @Override
     public String toString() {
-        return "Martian " + getName() +" Seat";
+        return "Martian, " + getName() +" Seat";
     }
 }
