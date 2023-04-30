@@ -1,4 +1,4 @@
-package io.turntabl;
+package io.turntabl.booking;
 
 import io.turntabl.exception.OutOfCapacityException;
 import io.turntabl.passenger.Passenger;
@@ -24,6 +24,7 @@ public class FlightBooking {
 
     /** Book a flight in a spaceship for humans. */
     public Seat bookASeat(Passenger passenger) {
+        this.passenger = passenger;
         try {
             return this.spaceship.bookSeat(passenger);
         } catch (OutOfCapacityException e) {
@@ -31,8 +32,7 @@ public class FlightBooking {
         }
     }
 
-    /** Display available number of seats for both
-     humans and martians. */
+    /** Display available number of seats for bothhumans and martians. */
     public void getNumberOfAvailableSeats() {
         this.spaceship.getNumberOfSeatsAvailable();
     }
