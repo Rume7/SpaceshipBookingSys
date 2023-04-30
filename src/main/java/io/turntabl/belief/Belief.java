@@ -4,5 +4,4 @@ public interface Belief {
 
     String plutoBelief();
 
-
 }
