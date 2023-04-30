@@ -1,7 +1,6 @@
-# SpaceshipBookingSys
+# Spaceship Booking System
 
-
-A fleet of spaceships require a seat booking system for a passenger to book a seat on a flight. We
+A fleet of spaceships requires a seat booking system for a passenger to book a seat on a flight. We
 need to provide them with the ability to book!
 
 Humans can book ‘human’ seats and martians can book ‘martian’ seats.
