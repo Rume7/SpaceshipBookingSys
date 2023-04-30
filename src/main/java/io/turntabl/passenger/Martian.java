@@ -12,8 +12,14 @@ public class Martian extends Passenger {
         this.belief = new MartianBelief();
     }
 
+    @Override
     public String getPlutoBelief() {
         return belief.plutoBelief();
+    }
+
+    @Override
+    public String serveMeal() {
+        return "Human meal served.";
     }
 
     @Override
