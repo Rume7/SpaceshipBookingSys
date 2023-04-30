@@ -1,6 +1,8 @@
 package io.turntabl.passenger;
 
-public abstract class Passenger {
+import io.turntabl.meal.Meal;
+
+public abstract class Passenger implements Meal {
 
     private final String ID;
     private final String name;
@@ -17,6 +19,8 @@ public abstract class Passenger {
     public String getName() {
         return name;
     }
+
+    public abstract String getPlutoBelief() ;
 
     @Override
     public String toString() {
