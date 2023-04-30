@@ -49,5 +49,21 @@ public class MainApplication {
 
         System.out.println();
         booking.getSpaceship().getNumberOfSeatsAvailable();
+
+        // Create a Martian passenger
+        String martian_id2 = "M1002";
+        String martian_name2 = "Sally";
+        Passenger martianB = new Martian(martian_id2, martian_name2);
+
+        // Make a martian booking
+        martianSeat = booking.bookASeat(martianB);
+        System.out.println(martianSeat.toString() + " booked.");
+
+
+        // Check Sally's belief
+        System.out.println(booking.getPassenger().getPlutoBelief());
+
+        System.out.println();
+        booking.getSpaceship().getNumberOfSeatsAvailable();
     }
 }
