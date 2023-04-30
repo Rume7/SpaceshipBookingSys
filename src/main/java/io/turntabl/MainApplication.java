@@ -1,5 +1,6 @@
 package io.turntabl;
 
+import io.turntabl.booking.FlightBooking;
 import io.turntabl.passenger.Human;
 import io.turntabl.passenger.Martian;
 import io.turntabl.passenger.Passenger;
@@ -24,6 +25,13 @@ public class MainApplication {
         Seat humanSeat = booking.bookASeat(humanA);
         System.out.println(humanSeat.toString() + " booked.");
 
+        // Serve meal
+        String mealServed = booking.getSpaceship().servePassengerMeal(humanA);
+        System.out.println(mealServed);
+
+        // Check Belief
+        System.out.println(booking.getPassenger().getPlutoBelief());
+
         // Create a Martian passenger
         String martian_id = "M1001";
         String martian_name = "Galloway";
@@ -33,8 +41,7 @@ public class MainApplication {
         Seat martianSeat = booking.bookASeat(martianA);
         System.out.println(martianSeat.toString() + " booked.");
 
+        System.out.println();
         booking.getSpaceship().getNumberOfSeatsAvailable();
-
-        //booking.getSpaceship().servePassengerMeal(meal);
     }
 }
