@@ -29,7 +29,7 @@ public class MainApplication {
         String mealServed = booking.getSpaceship().servePassengerMeal(humanA);
         System.out.println(mealServed);
 
-        // Check Belief
+        // Check human Belief
         System.out.println(booking.getPassenger().getPlutoBelief());
 
         // Create a Martian passenger
@@ -40,6 +40,12 @@ public class MainApplication {
         // Make a martian booking
         Seat martianSeat = booking.bookASeat(martianA);
         System.out.println(martianSeat.toString() + " booked.");
+
+        mealServed = booking.getSpaceship().servePassengerMeal(martianA);
+        System.out.println(mealServed);
+
+        // Check Galloway's belief
+        System.out.println(booking.getPassenger().getPlutoBelief());
 
         System.out.println();
         booking.getSpaceship().getNumberOfSeatsAvailable();
